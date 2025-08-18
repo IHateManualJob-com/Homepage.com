@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMaster - เรียน Programming ออนไลน์</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #4a5568;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="code" patternUnits="userSpaceOnUse" width="100" height="100"><text x="10" y="20" fill="rgba(255,255,255,0.1)" font-family="monospace" font-size="12">&lt;code&gt;</text><text x="60" y="40" fill="rgba(255,255,255,0.1)" font-family="monospace" font-size="10">function()</text><text x="20" y="60" fill="rgba(255,255,255,0.1)" font-family="monospace" font-size="8">{return true;}</text><text x="50" y="80" fill="rgba(255,255,255,0.1)" font-family="monospace" font-size="10">console.log</text></pattern></defs><rect width="100" height="100" fill="url(%23code)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        /* Course Stats */
+        .stats {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            border-radius: 15px;
+            background: linear-gradient(145deg, #f0f2f5, #ffffff);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Course Outline */
+        .course-outline {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+        }
+
+        .course-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-title {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .module-lessons {
+            list-style: none;
+        }
+
+        .module-lessons li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .module-lessons li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+
+        /* Instructor Profile */
+        .instructor {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .instructor-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .instructor-image {
+            text-align: center;
+        }
+
+        .instructor-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .instructor-info h3 {
+            font-size: 2rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .instructor-title {
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .instructor-bio {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f8fafc;
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #667eea;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info {
+            font-weight: bold;
+            color: #2d3748;
+        }
+
+        .author-role {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        /* Enrollment Section */
+        .enrollment {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .enrollment h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .enrollment-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: #48bb78;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #4a5568;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #a0aec0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .instructor-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #4a5568, #2d3748);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+            border-left: 20px solid white;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">🚀 CodeMaster</a>
+            <ul class="nav-links">
+                <li><a href="#course">หลักสูตร</a></li>
+                <li><a href="#instructor">อาจารย์</a></li>
+                <li><a href="#testimonials">รีวิว</a></li>
+                <li><a href="#enrollment">สมัครเรียน</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>เรียน Programming แบบมืออาชีพ</h1>
+                <p>เริ่มต้นจากศูนย์สู่การเป็น Full-Stack Developer ใน 6 เดือน<br>
+                พร้อมใบประกาศนียบัตรและการฝึกงานจริง</p>
+                <a href="#enrollment" class="cta-button">เริ่มเรียนฟรี 7 วัน</a>
+                
+                <div class="video-placeholder">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                    <div style="position: absolute; bottom: 20px; left: 20px;">
+                        📹 ดูตัวอย่างคอร์สเรียน (3:45 นาที)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">นักเรียนที่จบคอร์ส</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">หางานสำเร็จ</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">ชั่วโมงเรียน</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">ซัพพอร์ตตลอดเวลา</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Outline -->
+    <section id="course" class="course-outline">
+        <div class="container">
+            <h2 class="section-title">หลักสูตรการเรียน</h2>
+            <div class="course-modules">
+                <div class="module-card fade-in">
+                    <h3 class="module-title">📚 Module 1: HTML & CSS Foundation</h3>
+                    <ul class="module-lessons">
+                        <li>HTML5 Semantic Elements</li>
+                        <li>CSS Grid & Flexbox</li>
+                        <li>Responsive Web Design</li>
+                        <li>CSS Animations</li>
+                        <li>โปรเจค: Landing Page</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card fade-in">
+                    <h3 class="module-title">⚡ Module 2: JavaScript Programming</h3>
+                    <ul class="module-lessons">
+                        <li>JavaScript ES6+ Syntax</li>
+                        <li>DOM Manipulation</li>
+                        <li>Async/Await & Promises</li>
+                        <li>API Integration</li>
+                        <li>โปรเจค: Interactive Web App</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card fade-in">
+                    <h3 class="module-title">⚛️ Module 3: React Development</h3>
+                    <ul class="module-lessons">
+                        <li>React Components & JSX</li>
+                        <li>State Management</li>
+                        <li>React Hooks</li>
+                        <li>React Router</li>
+                        <li>โปรเจค: E-commerce Website</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card fade-in">
+                    <h3 class="module-title">🖥️ Module 4: Backend Development</h3>
+                    <ul class="module-lessons">
+                        <li>Node.js & Express</li>
+                        <li>Database Design (MongoDB)</li>
+                        <li>RESTful API Development</li>
+                        <li>Authentication & Security</li>
+                        <li>โปรเจค: Full-Stack Application</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card fade-in">
+                    <h3 class="module-title">🚀 Module 5: Deployment & Tools</h3>
+                    <ul class="module-lessons">
+                        <li>Git Version Control</li>
+                        <li>Cloud Deployment (Vercel, Netlify)</li>
+                        <li>Performance Optimization</li>
+                        <li>Testing & Debugging</li>
+                        <li>โปรเจค: Portfolio Deployment</li>
+                    </ul>
+                </div>
+                
+                <div class="module-card fade-in">
+                    <h3 class="module-title">💼 Module 6: Career Preparation</h3>
+                    <ul class="module-lessons">
+                        <li>Portfolio Development</li>
+                        <li>Resume & LinkedIn Optimization</li>
+                        <li>Technical Interview Prep</li>
+                        <li>Freelancing Guidelines</li>
+                        <li>Job Search Strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Profile -->
+    <section id="instructor" class="instructor">
+        <div class="container">
+            <h2 class="section-title">พบกับอาจารย์ผู้สอน</h2>
+            <div class="instructor-content">
+                <div class="instructor-image">
+                    <img src="https://picsum.photos/250/250?random=teacher" alt="อาจารย์สมชาย" class="instructor-avatar">
+                </div>
+                <div class="instructor-info">
+                    <h3>อาจารย์สมชาย เทคโนโลยี</h3>
+                    <div class="instructor-title">Senior Full-Stack Developer & Tech Lead</div>
+                    <div class="instructor-bio">
+                        <p>มีประสบการณ์การพัฒนาซอฟต์แวร์มากกว่า 10 ปี ทำงานกับบริษัทเทคโนโลยีชั้นนำ เช่น Google, Facebook และ Line Thailand</p>
+                        
+                        <p>เชี่ยวชาญใน JavaScript, React, Node.js และ Cloud Technologies ได้รับรางวัล "Best Tech Educator 2023" และสอนนักเรียนมากกว่า 10,000 คน</p>
+                        
+                        <p><strong>ความเชี่ยวชาญ:</strong> Full-Stack Development, System Design, DevOps, และ Agile Methodology</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">รีวิวจากนักเรียน</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "คอร์สนี้เปลี่ยนชีวิตผมจริงๆ จากคนที่ไม่เคยเขียนโค้ดเลย ตอนนี้ได้งาน Frontend Developer เงินเดือน 45,000 บาท อาจารย์สอนละเอียดมาก"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/50/50?random=student1" alt="นาย ก" class="author-avatar">
+                        <div class="author-info">
+                            นาย ก การเงิน
+                            <div class="author-role">Frontend Developer @ TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "ผมเป็นคนเปลี่ยนสายงานมาจาก Marketing หลังเรียนจบ 4 เดือน ก็ได้งาน Full-Stack Developer แล้ว การสอนแบบ hands-on ทำให้เข้าใจจริง"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/50/50?random=student2" alt="นาย ข" class="author-avatar">
+                        <div class="author-info">
+                            นาย ข มาร์เก็ตติ้ง
+                            <div class="author-role">Full-Stack Developer @ StartupXYZ</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        "เป็นผู้หญิงทำงานบ้าน ตัดสินใจเรียน coding เพื่อมีรายได้เสริม ตอนนี้ทำ freelance ได้เดือนละ 30,000+ และยังเรียนต่อได้ด้วย"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://picsum.photos/50/50?random=student3" alt="คุณ ค" class="author-avatar">
+                        <div class="author-info">
+                            คุณ ค แม่บ้าน
+                            <div class="author-role">Freelance Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment -->
+    <section id="enrollment" class="enrollment">
+        <div class="container">
+            <h2>เริ่มต้นการเรียนรู้วันนี้</h2>
+            <div class="price">
+                <span class="price-original">฿19,990</span>
+                <span>฿12,990</span>
+            </div>
+            <p style="font-size: 1.2rem; margin-bottom: 3rem;">🔥 Early Bird ลด 35% (เหลือเพียง 15 ที่นั่ง)</p>
+            
+            <div class="enrollment-features">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>50+ ชั่วโมงวิดีโอคุณภาพสูง</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>6 โปรเจคจริงในอุตสาหกรรม</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>ใบประกาศนียบัตรรับรองสากล</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>สนับสนุนหางาน 1 ปีเต็ม</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>เรียนซ้ำได้ตลอดชีวิต</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div>กลุ่ม Community นักเรียน</div>
+                </div>
+            </div>
+            
+            <a href="#" class="cta-button" onclick="showEnrollmentForm()">สมัครเรียนเลย!</a>
+            <p style="margin-top: 1rem; opacity: 0.8;">💰 รับประกันเงินคืน 30 วัน หากไม่พอใจ</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CodeMaster Academy</h3>
+                    <p>สถาบันสอน Programming ออนไลน์ชั้นนำของไทย มุ่งเน้นการสอนแบบปฏิบัติจริงและหางานได้จริง</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>หลักสูตร</h3>
+                    <ul>
+                        <li><a href="#">Full-Stack Development</a></li>
+                        <li><a href="#">Frontend Specialist</a></li>
+                        <li><a href="#">Backend Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>สนับสนุน</h3>
+                    <ul>
+                        <li><a href="#">คำถามที่พบบ่อย</a></li>
+                        <li><a href="#">ติดต่อเรา</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">เงื่อนไขการใช้งาน</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>ติดตามเรา</h3>
+                    <ul>
+                        <li><a href="#">📘 Facebook</a></li>
+                        <li><a href="#">📸 Instagram</a></li>
+                        <li><a href="#">💼 LinkedIn</a></li>
+                        <li><a href="#">📺 YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025
