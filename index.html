@@ -3,33 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IHateManualJob - หยุด Manual Job เริ่ม Automation วันนี้</title>
-    <meta name="description" content="เรียนรู้ Automation เพื่อกำจัด Manual Job ที่น่าเบื่อ เพิ่มประสิทธิภาพ และสร้างอิสรภาพในการทำงาน">
-    <meta name="keywords" content="automation, manual job, productivity, course, python, workflow">
+    <title>IHateManualJob - Automation Kill The Manual Job | หยุด Manual Work เริ่ม Automation</title>
+    <meta name="description" content="เรียนรู้ Automation เพื่อหยุดทำงาน Manual ที่น่าเบื่อ เพิ่มประสิทธิภาพ ประหยัดเวลา และมีเวลาให้กับสิ่งที่สำคัญกว่า">
+    <meta name="keywords" content="automation, manual job, productivity, course, python, workflow, thai">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="IHateManualJob - Kill The Manual Job Course">
-    <meta property="og:description" content="หยุด Manual Job เริ่ม Automation วันนี้">
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="IHateManualJob - Automation Kill The Manual Job">
+    <meta property="og:description" content="หยุด Manual Work เริ่ม Automation วันนี้ เรียนรู้การทำงานอัตโนมัติ">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/1ABC9C/FFFFFF?text=IHateManualJob">
     <meta property="og:url" content="https://ihatemanualjob.com">
-    
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Course",
-      "name": "Automation: Kill The Manual Job Course",
-      "description": "เรียนรู้ Automation เพื่อกำจัด Manual Job",
-      "provider": {
-        "@type": "Organization",
-        "name": "IHateManualJob"
-      }
-    }
-    </script>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* ===== CSS RESET & BASE STYLES ===== */
@@ -39,29 +22,15 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
+        html {
+            scroll-behavior: smooth;
         }
         
-        /* ===== CSS VARIABLES ===== */
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --accent-color: #06b6d4;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --white: #ffffff;
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000000;
+            background: #FFFFFF;
         }
         
         /* ===== UTILITY CLASSES ===== */
@@ -71,614 +40,478 @@
             padding: 0 20px;
         }
         
-        .section-padding {
-            padding: 80px 0;
-        }
-        
         .text-center {
             text-align: center;
         }
         
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        /* ===== TYPOGRAPHY ===== */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
-            padding: 16px 32px;
-            border-radius: var(--border-radius);
+            padding: 15px 30px;
+            background: #1ABC9C;
+            color: #FFFFFF;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid #1ABC9C;
         }
         
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-primary:hover {
+        .btn:hover {
+            background: #FFFFFF;
+            color: #1ABC9C;
             transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--primary-color);
-            color: white;
+            box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
         }
         
         .btn-large {
             padding: 20px 40px;
-            font-size: 18px;
+            font-size: 1.3rem;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #1ABC9C;
+            border: 2px solid #1ABC9C;
+        }
+        
+        .btn-secondary:hover {
+            background: #1ABC9C;
+            color: #FFFFFF;
         }
         
         /* ===== HEADER & NAVIGATION ===== */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+        header {
+            background: #FFFFFF;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 16px 0;
-            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
         }
         
-        .header.scrolled {
-            box-shadow: var(--shadow-md);
-        }
-        
-        .nav {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1ABC9C;
             text-decoration: none;
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 32px;
-            margin: 0;
+            gap: 2rem;
         }
         
-        .nav-link {
+        .nav-menu a {
+            color: #000000;
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 500;
-            transition: var(--transition);
-            position: relative;
+            transition: color 0.3s ease;
         }
         
-        .nav-link:hover {
-            color: var(--primary-color);
+        .nav-menu a:hover {
+            color: #1ABC9C;
         }
         
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .nav-cta {
-            margin-left: 20px;
-        }
-        
-        .mobile-menu-toggle {
+        .mobile-menu {
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: var(--text-dark);
+            font-size: 1.5rem;
             cursor: pointer;
         }
         
         /* ===== HERO SECTION ===== */
         .hero {
-            background: var(--gradient-hero);
-            color: white;
-            padding: 140px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
-            background-size: cover;
+            background: linear-gradient(135deg, #FFFFFF 0%, #f8f9fa 100%);
+            padding: 150px 0 80px;
+            text-align: center;
         }
         
         .hero-content {
-            position: relative;
-            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
         }
         
         .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            animation: fadeInUp 1s ease-out;
+            color: #000000;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .highlight {
+            color: #1ABC9C;
         }
         
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 32px;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
+            font-size: 1.3rem;
+            color: #666666;
+            margin-bottom: 3rem;
+            line-height: 1.6;
         }
         
         .hero-cta {
             display: flex;
-            gap: 20px;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 40px;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-        
-        .social-proof {
-            margin-top: 60px;
-            padding: 24px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-        
-        .social-proof-text {
-            font-size: 14px;
-            opacity: 0.8;
-            margin-bottom: 8px;
-        }
-        
-        .social-proof-number {
-            font-size: 24px;
-            font-weight: 700;
         }
         
         /* ===== PROBLEM SECTION ===== */
         .problem {
-            background: var(--bg-light);
+            background: #f8f9fa;
             padding: 80px 0;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 16px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
         }
         
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
-        .problem-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
+        .problem-item {
             text-align: center;
+            padding: 2rem;
+            background: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
         
-        .problem-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
+        .problem-item:hover {
+            transform: translateY(-5px);
         }
         
         .problem-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            margin: 0 auto 1.5rem;
+            background: #1ABC9C;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
-            font-size: 32px;
-            color: white;
-        }
-        
-        .problem-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-dark);
-        }
-        
-        .problem-card p {
-            color: var(--text-light);
+            font-size: 2rem;
+            color: #FFFFFF;
         }
         
         /* ===== SOLUTION SECTION ===== */
         .solution {
             padding: 80px 0;
-            background: white;
+            background: #FFFFFF;
         }
         
-        .solution-grid {
+        .solution-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
         }
         
-        .solution-card {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 32px;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: var(--transition);
+        .solution-text {
+            padding-right: 2rem;
         }
         
-        .solution-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .solution-features {
+            list-style: none;
+            margin: 2rem 0;
         }
         
-        .solution-card i {
-            font-size: 40px;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .solution-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
         }
         
-        .solution-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 16px;
+        .solution-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1ABC9C;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .solution-image {
+            text-align: center;
+        }
+        
+        .solution-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         /* ===== COURSE SECTION ===== */
         .course {
-            background: var(--bg-light);
+            background: #f8f9fa;
             padding: 80px 0;
         }
         
-        .pricing-grid {
+        .course-modules {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
-        .pricing-card {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+        .module {
+            background: #FFFFFF;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
         
-        .pricing-card.featured {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-lg);
+        .module:hover {
+            transform: translateY(-5px);
         }
         
-        .pricing-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 8px 40px;
-            font-size: 12px;
-            font-weight: 600;
-            transform: rotate(45deg);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .pricing-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-        
-        .pricing-period {
-            color: var(--text-light);
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-        
-        .pricing-features li {
-            padding: 8px 0;
+        .module-number {
+            background: #1ABC9C;
+            color: #FFFFFF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
         }
         
-        .pricing-features li i {
-            color: #10b981;
-            margin-right: 12px;
-        }
-        
-        .countdown-timer {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-            color: white;
-            padding: 16px;
-            border-radius: 8px;
+        .course-info {
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
             text-align: center;
-            margin: 30px 0;
         }
         
-        .timer-text {
-            font-size: 14px;
-            margin-bottom: 8px;
+        .course-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
         }
         
-        .timer-digits {
-            font-size: 24px;
-            font-weight: 700;
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1ABC9C;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         /* ===== TESTIMONIALS SECTION ===== */
         .testimonials {
             padding: 80px 0;
-            background: white;
+            background: #FFFFFF;
         }
         
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
-        .testimonial-card {
-            background: var(--bg-light);
-            padding: 30px;
-            border-radius: 16px;
+        .testimonial {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
             position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .testimonial-card::before {
+        .testimonial:before {
             content: '"';
+            font-size: 4rem;
+            color: #1ABC9C;
             position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 60px;
-            color: var(--primary-color);
+            top: -1rem;
+            left: 1rem;
             opacity: 0.3;
         }
         
-        .testimonial-text {
-            margin-bottom: 20px;
+        .testimonial-content {
+            margin-bottom: 1.5rem;
             font-style: italic;
-            line-height: 1.6;
+            position: relative;
+            z-index: 2;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 1rem;
         }
         
-        .author-avatar {
+        .author-image {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 600;
+            object-fit: cover;
         }
         
         .author-info h4 {
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 0.25rem;
         }
         
         .author-info p {
-            color: var(--text-light);
-            font-size: 14px;
+            font-size: 0.9rem;
+            color: #666666;
+            margin: 0;
         }
         
-        .testimonial-rating {
-            color: #fbbf24;
-            margin-top: 8px;
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            background: linear-gradient(135deg, #1ABC9C, #16a085);
+            color: #FFFFFF;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .offer-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 500px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-note {
+            font-size: 1rem;
+            opacity: 0.8;
         }
         
         /* ===== FAQ SECTION ===== */
         .faq {
-            background: var(--bg-light);
+            background: #f8f9fa;
             padding: 80px 0;
         }
         
         .faq-list {
             max-width: 800px;
-            margin: 60px auto 0;
+            margin: 3rem auto 0;
         }
         
         .faq-item {
-            background: white;
-            margin-bottom: 16px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-sm);
+            background: #FFFFFF;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             overflow: hidden;
         }
         
         .faq-question {
-            width: 100%;
-            padding: 24px;
-            background: none;
-            border: none;
-            text-align: left;
-            font-size: 16px;
+            padding: 1.5rem;
             font-weight: 600;
             cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
         }
         
         .faq-question:hover {
-            background: var(--bg-light);
+            background: #f8f9fa;
         }
         
         .faq-answer {
-            padding: 0 24px;
-            max-height: 0;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-        
-        .faq-answer.active {
-            padding: 24px;
-            max-height: 200px;
-        }
-        
-        .faq-icon {
-            transition: var(--transition);
-        }
-        
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-        
-        /* ===== CONTACT SECTION ===== */
-        .contact {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .contact-form {
-            max-width: 600px;
-            margin: 60px auto 0;
-            background: var(--bg-light);
-            padding: 40px;
-            border-radius: 16px;
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: 16px;
-            border: 2px solid #e5e7eb;
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            transition: var(--transition);
-        }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-        }
-        
-        .form-textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .privacy-text {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 16px;
-            text-align: center;
+            padding: 0 1.5rem 1.5rem;
+            color: #666666;
         }
         
         /* ===== FOOTER ===== */
-        .footer {
-            background: var(--text-dark);
-            color: white;
+        footer {
+            background: #000000;
+            color: #FFFFFF;
             padding: 60px 0 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
         
         .footer-section h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            color: #1ABC9C;
+            margin-bottom: 1rem;
         }
         
         .footer-section ul {
@@ -686,74 +519,47 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
         }
         
         .footer-section ul li a {
-            color: #d1d5db;
+            color: #FFFFFF;
             text-decoration: none;
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
         
         .footer-section ul li a:hover {
-            color: white;
+            color: #1ABC9C;
         }
         
         .social-links {
             display: flex;
-            gap: 16px;
-            margin-top: 20px;
+            gap: 1rem;
+            margin-top: 1rem;
         }
         
-        .social-link {
+        .social-links a {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: var(--primary-color);
+            background: #1ABC9C;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 40px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
             text-decoration: none;
-            transition: var(--transition);
+            transition: background 0.3s ease;
         }
         
-        .social-link:hover {
-            transform: translateY(-2px);
-            background: var(--secondary-color);
+        .social-links a:hover {
+            background: #16a085;
         }
         
         .footer-bottom {
-            border-top: 1px solid #374151;
-            padding-top: 30px;
             text-align: center;
-            color: #9ca3af;
-        }
-        
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-        
-        .animate-pulse {
-            animation: pulse 2s infinite;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+            color: #999999;
         }
         
         /* ===== RESPONSIVE DESIGN ===== */
@@ -762,16 +568,20 @@
                 display: none;
             }
             
-            .mobile-menu-toggle {
+            .mobile-menu {
                 display: block;
             }
             
-            .hero h1 {
-                font-size: 2.5rem;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .hero-subtitle {
-                font-size: 1.2rem;
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
             }
             
             .hero-cta {
@@ -779,48 +589,49 @@
                 align-items: center;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
-            .pricing-card.featured {
-                transform: none;
-            }
-            
-            .container {
-                padding: 0 16px;
+            .solution-text {
+                padding-right: 0;
             }
             
             .section-padding {
                 padding: 60px 0;
             }
+            
+            .container {
+                padding: 0 15px;
+            }
         }
         
         @media (max-width: 480px) {
-            .hero {
-                padding: 120px 0 60px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
+            h1 {
+                font-size: 1.8rem;
             }
             
             .btn {
-                padding: 14px 24px;
-                font-size: 14px;
+                padding: 12px 24px;
+                font-size: 1rem;
             }
             
             .btn-large {
-                padding: 16px 32px;
-                font-size: 16px;
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
         }
         
-        /* ===== SCROLL ANIMATIONS ===== */
+        /* ===== ANIMATIONS ===== */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease-out;
+            transition: all 0.6s ease;
         }
         
         .fade-in.visible {
@@ -830,91 +641,191 @@
     </style>
 </head>
 <body>
-    <!-- ===== HEADER / NAVIGATION ===== -->
-    <!-- Sticky navigation with blur effect and smooth scroll -->
-    <header class="header" id="header">
+    <!-- ===== HEADER NAVIGATION ===== -->
+    <!-- Fixed header with logo, menu, and CTA button -->
+    <header>
         <div class="container">
-            <nav class="nav">
+            <nav>
                 <a href="#" class="logo">IHateManualJob</a>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#problem" class="nav-link">ปัญหา</a></li>
-                    <li><a href="#solution" class="nav-link">โซลูชัน</a></li>
-                    <li><a href="#course" class="nav-link">คอร์ส</a></li>
-                    <li><a href="#testimonials" class="nav-link">รีวิว</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#course">Course</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="nav-cta">
-                    <a href="#course" class="btn btn-primary">เริ่มเรียนเลย</a>
-                </div>
-                <button class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <a href="#course" class="btn">เริ่มเรียนฟรี</a>
+                <button class="mobile-menu">☰</button>
             </nav>
         </div>
     </header>
 
     <!-- ===== HERO SECTION ===== -->
-    <!-- Above the fold section with powerful headline, pain-driven messaging -->
+    <!-- Main headline with pain point messaging and primary CTA -->
     <section class="hero" id="home">
         <div class="container">
-            <div class="hero-content text-center">
-                <h1>หยุดทำ Manual Job<br>เริ่ม <span style="color: #ffd700;">Automation</span> วันนี้!</h1>
+            <div class="hero-content">
+                <h1>หยุดทำงาน <span class="highlight">Manual</span><br>เริ่ม <span class="highlight">Automation</span> วันนี้!</h1>
                 <p class="hero-subtitle">
-                    ทำงานซ้ำๆ ทุกวันจนเบื่อ? เสียเวลากับงานที่คอมพิวเตอร์ทำแทนได้?<br>
-                    <strong>เรียนรู้ Automation ใน 30 วัน และกลายเป็นคนที่มีเวลาให้กับสิ่งสำคัญกว่า</strong>
+                    เบื่อทำงานซ้ำๆ ทุกวันแล้วใช่ไหม? เสียเวลา 3-5 ชั่วโมงต่อวัน กับงานที่คอมพิวเตอร์ทำแทนได้<br>
+                    <strong>เรียนรู้ Automation ใน 30 วัน และกลับคืนเวลาให้กับสิ่งที่สำคัญกว่า</strong>
                 </p>
-                
                 <div class="hero-cta">
-                    <a href="#course" class="btn btn-primary btn-large animate-pulse">
-                        <i class="fas fa-rocket"></i> เริ่ม Automation วันนี้
-                    </a>
-                    <a href="#demo" class="btn btn-secondary btn-large">
-                        <i class="fas fa-play"></i> ดูตัวอย่างฟรี
-                    </a>
-                </div>
-                
-                <!-- Social Proof Indicator -->
-                <div class="social-proof">
-                    <p class="social-proof-text">เข้าร่วมกับผู้เชี่ยวชาญกว่า</p>
-                    <p class="social-proof-number">1,247+ คน</p>
-                    <p style="font-size: 14px; opacity: 0.8;">ที่หยุด Manual Job และเปลี่ยนชีวิตแล้ว ✨</p>
+                    <a href="#course" class="btn btn-large">เริ่มเรียนทันที</a>
+                    <a href="#solution" class="btn btn-secondary btn-large">ดูรายละเอียด</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ===== PROBLEM SECTION ===== -->
-    <!-- Pain points with emotional triggers, relatable scenarios -->
+    <!-- Pain points with statistics and relatable scenarios -->
     <section class="problem section-padding" id="problem">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">คุณเบื่อหรือยังกับ Manual Job?</h2>
-                <p class="section-subtitle">
-                    ทุกวันต้องทำงานซ้ำๆ เสียเวลา เหนื่อย และไม่มีเวลาให้สิ่งที่สำคัญกว่า
-                </p>
+            <div class="text-center">
+                <h2>คุณเจอปัญหาเหล่านี้ไหม?</h2>
+                <p>ปัญหาที่คนทำงาน Manual เจอทุกวัน และส่งผลกระทบต่อชีวิต</p>
             </div>
             
             <div class="problem-grid">
-                <div class="problem-card fade-in">
-                    <div class="problem-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
+                <div class="problem-item">
+                    <div class="problem-icon">⏰</div>
                     <h3>เสียเวลาเยอะมาก</h3>
-                    <p>ใช้เวลา 3-5 ชั่วโมงต่อวัน ทำงานซ้ำๆ ที่คอมพิวเตอร์สามารถทำแทนได้ในไม่กี่นาที</p>
+                    <p>ใช้เวลา 3-5 ชั่วโมงต่อวัน ทำงานซ้ำๆ ที่คอมพิวเตอร์สามารถทำแทนได้ใน 5 นาที</p>
                 </div>
                 
-                <div class="problem-card fade-in">
-                    <div class="problem-icon">
-                        <i class="fas fa-tired"></i>
-                    </div>
+                <div class="problem-item">
+                    <div class="problem-icon">😩</div>
                     <h3>เบื่อและ Burnout</h3>
-                    <p>ทำงานเดิมๆ ทุกวัน ไม่มี Creativity ไม่มีการเรียนรู้อะไรใหม่ รู้สึกติดอยู่ในจุดเดิม</p>
+                    <p>ทำงานเดิมๆ ทุกวัน ไม่มี Creativity ไม่เรียนรู้อะไรใหม่ รู้สึกติดอยู่ในจุดเดิม</p>
                 </div>
                 
-                <div class="problem-card fade-in">
-                    <div class="problem-icon">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </div>
+                <div class="problem-item">
+                    <div class="problem-icon">⚠️</div>
                     <h3>ผิดพลาดบ่อย</h3>
-                    <p>ทำงานซ้ำๆ จนเบื่อ ทำให้เกิดข้อผิดพลา
+                    <p>ทำงานซ้ำๆ จนเบื่อ ทำให้เกิดข้อผิดพลาด Human Error ที่หลีกเลี่ยงได้</p>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-icon">📊</div>
+                    <h3>ไม่มีเวลาพัฒนาตัวเอง</h3>
+                    <p>เวลาส่วนใหญ่ไปกับงานประจำ ไม่มีเวลาเรียนรู้ skill ใหม่ หรือทำในสิ่งที่สำคัญกว่า</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOLUTION SECTION ===== -->
+    <!-- Course introduction with key benefits and features -->
+    <section class="solution section-padding" id="solution">
+        <div class="container">
+            <div class="text-center">
+                <h2>Automation คือคำตอบ!</h2>
+                <p>เปลี่ยนจาก Manual Worker เป็น Automation Expert</p>
+            </div>
+            
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h3>คอร์ส "Automation: Kill The Manual Job"</h3>
+                    <p>เรียนรู้การสร้าง Automation System ที่จะช่วยให้คุณทำงานได้เร็วขึ้น มีความแม่นยำมากขึ้น และมีเวลาให้กับสิ่งที่สำคัญกว่า</p>
+                    
+                    <ul class="solution-features">
+                        <li>เรียนรู้ Python สำหรับ Automation จากพื้นฐาน</li>
+                        <li>สร้าง Bot ทำงานแทนในงาน Excel, Email, Web</li>
+                        <li>Automate การวิเคราะห์ข้อมูลและสร้างรายงาน</li>
+                        <li>เชื่อมต่อ API และทำงานกับ Database</li>
+                        <li>สร้าง Workflow อัตโนมัติสำหรับงานประจำ</li>
+                        <li>เรียนออนไลน์ได้ทุกที่ทุกเวลา พร้อม Support 24/7</li>
+                    </ul>
+                    
+                    <a href="#course" class="btn btn-large">ดูรายละเอียดคอร์ส</a>
+                </div>
+                
+                <div class="solution-image">
+                    <img src="https://via.placeholder.com/500x400/1ABC9C/FFFFFF?text=Automation+Course" alt="Automation Course Preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURSE DETAILS SECTION ===== -->
+    <!-- Detailed course modules, duration, and outcomes -->
+    <section class="course section-padding" id="course">
+        <div class="container">
+            <div class="text-center">
+                <h2>เนื้อหาในคอร์ส</h2>
+                <p>เรียนรู้ Step by Step จากผู้เชี่ยวชาญ Automation มากกว่า 10 ปี</p>
+            </div>
+            
+            <div class="course-modules">
+                <div class="module">
+                    <div class="module-number">1</div>
+                    <h3>Python Foundation</h3>
+                    <p>เรียนรู้ Python พื้นฐานสำหรับ Automation เริ่มต้นจากศูน์ พร้อมแนวทางการคิดแบบ Programmer</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">2</div>
+                    <h3>Excel & File Automation</h3>
+                    <p>สร้าง Bot จัดการไฟล์ Excel, CSV, PDF อัตโนมัติ อ่าน/เขียนข้อมูล และสร้างรายงาน</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">3</div>
+                    <h3>Web Automation & Scraping</h3>
+                    <p>ทำงานกับเว็บไซต์อัตโนมัติ เก็บข้อมูล กรอกฟอร์ม และทำงานซ้ำๆ บนเว็บ</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">4</div>
+                    <h3>Email & Communication</h3>
+                    <p>สร้างระบบส่ง Email อัตโนมัติ จัดการข้อความ และสร้าง Notification System</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">5</div>
+                    <h3>Database & API Integration</h3>
+                    <p>เชื่อมต่อ Database, ทำงานกับ API, และสร้างระบบข้อมูลแบบครบวงจร</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">6</div>
+                    <h3>Advanced Automation</h3>
+                    <p>สร้าง Workflow ขั้นสูง, Schedule Tasks, และ Deploy Automation บน Cloud</p>
+                </div>
+            </div>
+            
+            <div class="course-info">
+                <h3>รายละเอียดคอร์ส</h3>
+                <div class="course-stats">
+                    <div class="stat">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">วัน</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">วิดีโอ</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Project</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+                
+                <p><strong>รับรอง:</strong> หลังจบคอร์สคุณจะสามารถสร้าง Automation System ที่ประหยัดเวลาได้อย่างน้อย 20+ ชั่วโมงต่อสัปดาห์</p>
+                
+                <a href="#" class="btn btn-large">สมัครเรียนเลย</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS SECTION ===== -->
+    <!-- Social proof with student reviews and success stories -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="text-center">
+                <h
