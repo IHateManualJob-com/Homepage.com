@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IHateManualJob 😤 - หยุดทำงานน่าเบื่อ เริ่ม Automation กันเถอะ! 🚀</title>
     <meta name="description" content="เบื่อ Manual Work แล้วใช่ไหม? มาเรียนรู้ Automation กันเถอะ! สนุก ง่าย และได้ผลจริง 🎯">
-    <meta name="keywords" content="automation, manual job, productivity, course, python, workflow, thai, fun">
-    
-    <!-- OpenGraph Meta Tags -->
-    <meta property="og:title" content="IHateManualJob 😤 - หยุดทำงานน่าเบื่อ เริ่ม Automation กันเถอะ! 🚀">
-    <meta property="og:description" content="เบื่อ Manual Work แล้วใช่ไหม? มาเรียนรู้ Automation กันเถอะ! สนุก ง่าย และได้ผลจริง 🎯">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/FF6B6B/FFFFFF?text=IHateManualJob+🚀">
-    <meta property="og:url" content="https://ihatemanualjob.com">
     
     <style>
-        /* ===== CSS RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -27,21 +18,13 @@
         }
         
         body {
-            font-family: 'Comic Sans MS', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #2D3748;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background: #FFFFFF;
         }
         
-        /* ===== PLAYFUL ANIMATIONS ===== */
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
+        /* ===== ANIMATIONS ===== */
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
@@ -50,14 +33,9 @@
         
         @keyframes wiggle {
             0% { transform: rotate(0deg); }
-            25% { transform: rotate(5deg); }
-            75% { transform: rotate(-5deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
             100% { transform: rotate(0deg); }
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
         }
         
         @keyframes pulse {
@@ -81,107 +59,75 @@
             padding: 80px 0;
         }
         
-        .bounce {
-            animation: bounce 2s infinite;
-        }
-        
-        .wiggle {
-            animation: wiggle 1s ease-in-out infinite;
-        }
-        
-        .float {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
         /* ===== TYPOGRAPHY ===== */
         h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
+            font-size: 3rem;
+            font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 1rem;
-            color: #FFFFFF;
-            text-shadow: 3px 3px 0px #FF6B6B, 6px 6px 0px #4ECDC4;
-            transform: rotate(-2deg);
+            margin-bottom: 1.5rem;
+            color: #1ABC9C;
         }
         
         h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: #2D3748;
-            text-shadow: 2px 2px 0px #FFE66D;
-            transform: rotate(1deg);
         }
         
         h3 {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 600;
             margin-bottom: 0.8rem;
-            color: #FF6B6B;
+            color: #1ABC9C;
         }
         
         p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 1rem;
             line-height: 1.8;
             color: #4A5568;
         }
         
-        /* ===== PLAYFUL BUTTONS ===== */
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
             padding: 18px 36px;
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1, #96CEB4);
-            background-size: 400% 400%;
+            background: #1ABC9C;
             color: #FFFFFF;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: 4px solid #FFFFFF;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-            animation: gradientShift 3s ease infinite;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
+            border: none;
+            box-shadow: 0 8px 25px rgba(26, 188, 156, 0.3);
+            animation: pulse 2s infinite;
         }
         
         .btn:hover {
-            transform: translateY(-5px) rotate(2deg) scale(1.1);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: #16A085;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(26, 188, 156, 0.4);
         }
         
         .btn-large {
-            padding: 25px 50px;
-            font-size: 1.4rem;
-            border-radius: 60px;
+            padding: 22px 44px;
+            font-size: 1.3rem;
         }
         
         .btn-secondary {
-            background: linear-gradient(45deg, #FFE66D, #FF6B6B);
-            border: 4px solid #FF6B6B;
+            background: transparent;
+            color: #1ABC9C;
+            border: 3px solid #1ABC9C;
         }
         
-        /* ===== CUTE HEADER ===== */
+        .btn-secondary:hover {
+            background: #1ABC9C;
+            color: #FFFFFF;
+        }
+        
+        /* ===== HEADER ===== */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
@@ -191,7 +137,7 @@
             right: 0;
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 3px solid #FF6B6B;
+            border-bottom: 3px solid #1ABC9C;
         }
         
         nav {
@@ -203,17 +149,14 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 900;
-            color: #FF6B6B;
+            color: #1ABC9C;
             text-decoration: none;
-            text-shadow: 2px 2px 0px #4ECDC4;
-            transform: rotate(-3deg);
             transition: all 0.3s ease;
         }
         
         .logo:hover {
-            transform: rotate(3deg) scale(1.1);
-            color: #4ECDC4;
-            text-shadow: 2px 2px 0px #FF6B6B;
+            transform: scale(1.1);
+            animation: wiggle 1s ease-in-out;
         }
         
         .nav-menu {
@@ -229,14 +172,12 @@
             padding: 10px 20px;
             border-radius: 25px;
             transition: all 0.3s ease;
-            position: relative;
         }
         
         .nav-menu a:hover {
-            background: linear-gradient(45deg, #FFE66D, #4ECDC4);
+            background: #1ABC9C;
             color: #FFFFFF;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
         }
         
         .mobile-menu {
@@ -245,36 +186,35 @@
             border: none;
             font-size: 2rem;
             cursor: pointer;
-            color: #FF6B6B;
+            color: #1ABC9C;
         }
         
-        /* ===== SUPER FUN HERO SECTION ===== */
+        /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 180px 0 100px;
+            padding: 160px 0 100px;
             text-align: center;
+            color: #FFFFFF;
             position: relative;
             overflow: hidden;
         }
         
-        .hero::before {
-            content: '😤💻🤖✨🎉';
+        .hero-emojis {
             position: absolute;
             top: 20%;
             left: 10%;
             font-size: 3rem;
-            opacity: 0.1;
-            animation: float 4s ease-in-out infinite;
+            opacity: 0.2;
+            animation: wiggle 3s ease-in-out infinite;
         }
         
-        .hero::after {
-            content: '🚀⚡💪🎯🔥';
+        .hero-emojis-right {
             position: absolute;
             bottom: 20%;
             right: 10%;
             font-size: 3rem;
-            opacity: 0.1;
-            animation: float 4s ease-in-out infinite reverse;
+            opacity: 0.2;
+            animation: wiggle 3s ease-in-out infinite reverse;
         }
         
         .hero-content {
@@ -285,19 +225,19 @@
         }
         
         .hero h1 {
+            color: #FFFFFF;
             margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: bounce 2s ease-in-out infinite;
         }
         
         .hero-subtitle {
-            font-size: 1.4rem;
-            color: #FFFFFF;
+            font-size: 1.3rem;
             margin-bottom: 3rem;
-            line-height: 1.8;
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 30px;
-            border: 3px dashed #FFFFFF;
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 25px;
+            border: 2px dashed rgba(255,255,255,0.5);
         }
         
         .hero-cta {
@@ -307,95 +247,50 @@
             flex-wrap: wrap;
         }
         
-        .emoji-large {
-            font-size: 4rem;
-            animation: wiggle 2s ease-in-out infinite;
-            margin: 0 10px;
-        }
-        
-        /* ===== CUTE PROBLEM SECTION ===== */
+        /* ===== PROBLEM SECTION ===== */
         .problem {
-            background: #FFFFFF;
+            background: #F8F9FA;
             padding: 100px 0;
-            position: relative;
         }
         
-        .section-decoration {
-            text-align: center;
-            font-size: 5rem;
+        .section-emoji {
+            font-size: 4rem;
             margin-bottom: 2rem;
-            animation: pulse 2s ease-in-out infinite;
+            animation: bounce 2s ease-in-out infinite;
         }
         
         .problem-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin-top: 4rem;
         }
         
         .problem-item {
-            text-align: center;
-            padding: 3rem 2rem;
-            background: linear-gradient(135deg, #FFE66D 0%, #FF6B6B 100%);
-            border-radius: 30px;
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid #1ABC9C;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 4px solid #FFFFFF;
-        }
-        
-        .problem-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: float 6s ease-in-out infinite;
         }
         
         .problem-item:hover {
             transform: translateY(-10px) rotate(2deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
-        .problem-icon {
-            font-size: 4rem;
+        .problem-emoji {
+            font-size: 3rem;
             margin-bottom: 1.5rem;
-            animation: bounce 2s ease-in-out infinite;
-            filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.2));
+            animation: pulse 2s ease-in-out infinite;
         }
         
-        .problem-item h3 {
-            color: #FFFFFF;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-        }
-        
-        .problem-item p {
-            color: #FFFFFF;
-            font-weight: 600;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
-        }
-        
-        /* ===== CHEERFUL SOLUTION SECTION ===== */
+        /* ===== SOLUTION SECTION ===== */
         .solution {
             padding: 100px 0;
-            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
-            position: relative;
-        }
-        
-        .solution::before {
-            content: '🎯🚀💡⚡';
-            position: absolute;
-            top: 50%;
-            left: 5%;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 5s ease-in-out infinite;
+            background: #FFFFFF;
         }
         
         .solution-content {
@@ -407,16 +302,10 @@
         }
         
         .solution-text {
-            background: rgba(255,255,255,0.95);
+            background: #F8F9FA;
             padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border: 4px solid #FFFFFF;
-        }
-        
-        .solution-text h2 {
-            color: #FF6B6B;
-            margin-bottom: 1.5rem;
+            border-radius: 25px;
+            border: 3px solid #1ABC9C;
         }
         
         .solution-features {
@@ -426,70 +315,55 @@
         
         .solution-features li {
             padding: 0.8rem 0;
-            position: relative;
-            padding-left: 3rem;
             font-weight: 600;
-            color: #2D3748;
-            border-bottom: 2px dashed rgba(255,107,107,0.3);
+            position: relative;
+            padding-left: 2rem;
         }
         
         .solution-features li:before {
             content: "🎉";
             position: absolute;
             left: 0;
-            font-size: 1.5rem;
-            animation: wiggle 2s ease-in-out infinite;
-        }
-        
-        .solution-image {
-            text-align: center;
-            position: relative;
+            font-size: 1.2rem;
         }
         
         .solution-image img {
             max-width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border: 6px solid #FFFFFF;
-            transition: all 0.3s ease;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 4px solid #1ABC9C;
         }
         
-        .solution-image img:hover {
-            transform: rotate(-2deg) scale(1.05);
-        }
-        
-        /* ===== VIBRANT COURSE SECTION ===== */
+        /* ===== COURSE SECTION ===== */
         .course {
-            background: #FFFFFF;
+            background: #F8F9FA;
             padding: 100px 0;
-            position: relative;
         }
         
         .course-modules {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
             margin: 4rem 0;
         }
         
         .module {
-            background: linear-gradient(135deg, #96CEB4 0%, #FFECD2 100%);
-            padding: 3rem 2rem;
-            border-radius: 30px;
+            background: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            position: relative;
-            border: 4px solid #FFFFFF;
             text-align: center;
+            border: 3px solid #1ABC9C;
         }
         
         .module:hover {
-            transform: translateY(-10px) rotate(-1deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .module-number {
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            background: #1ABC9C;
             color: #FFFFFF;
             width: 60px;
             height: 60px;
@@ -500,51 +374,29 @@
             font-weight: 900;
             font-size: 1.5rem;
             margin: 0 auto 2rem;
-            border: 4px solid #FFFFFF;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             animation: pulse 2s ease-in-out infinite;
         }
         
-        .module h3 {
-            color: #2D3748;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
-        }
-        
-        .module p {
-            color: #4A5568;
-            font-weight: 600;
-        }
-        
         .course-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
             color: #FFFFFF;
-            padding: 4rem 3rem;
-            border-radius: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            margin-top: 4rem;
+            padding: 4rem;
+            border-radius: 30px;
             text-align: center;
-            border: 6px solid #FFFFFF;
+            margin-top: 4rem;
             position: relative;
         }
         
         .course-info::before {
             content: '✨🎓🏆💫';
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2rem;
+            font-size: 1.5rem;
             background: #FFFFFF;
-            padding: 10px 20px;
-            border-radius: 25px;
-        }
-        
-        .course-info h3 {
-            color: #FFFFFF;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
         }
         
         .course-stats {
@@ -555,39 +407,32 @@
         }
         
         .stat {
-            text-align: center;
             background: rgba(255,255,255,0.1);
             padding: 2rem;
             border-radius: 20px;
-            border: 2px dashed rgba(255,255,255,0.3);
+            text-align: center;
         }
         
         .stat-number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #FFE66D;
             display: block;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
             animation: pulse 2s ease-in-out infinite;
         }
         
         .stat-label {
             font-size: 1rem;
-            color: #FFFFFF;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-weight: 600;
+            margin-top: 0.5rem;
         }
         
-        /* ===== HAPPY TESTIMONIALS ===== */
+        /* ===== TESTIMONIALS ===== */
         .testimonials {
             padding: 100px 0;
-            background: linear-gradient(135deg, #FFE66D 0%, #FF6B6B 100%);
-        }
-        
-        .testimonials h2 {
-            color: #FFFFFF;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            background: #FFFFFF;
         }
         
         .testimonials-grid {
@@ -598,169 +443,104 @@
         }
         
         .testimonial {
-            background: #FFFFFF;
+            background: #F8F9FA;
             padding: 3rem;
-            border-radius: 30px;
+            border-radius: 25px;
+            border: 3px solid #1ABC9C;
             position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border: 4px solid rgba(255,255,255,0.8);
             transition: all 0.3s ease;
         }
         
         .testimonial:hover {
-            transform: translateY(-10px) rotate(1deg);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
         
         .testimonial::before {
             content: '💬';
-            font-size: 4rem;
+            font-size: 3rem;
             position: absolute;
-            top: -20px;
-            left: 30px;
-            animation: bounce 2s ease-in-out infinite;
+            top: -15px;
+            left: 25px;
         }
         
         .testimonial-content {
-            margin: 2rem 0 2rem;
+            margin: 2rem 0;
             font-style: italic;
             font-weight: 600;
-            color: #2D3748;
-            position: relative;
-            z-index: 2;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
         
         .author-image {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            border: 4px solid #FF6B6B;
-            object-fit: cover;
+            border: 3px solid #1ABC9C;
         }
         
         .author-info h4 {
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #FF6B6B;
-        }
-        
-        .author-info p {
-            font-size: 1rem;
-            color: #4A5568;
-            margin: 0;
+            color: #1ABC9C;
         }
         
         .rating {
             margin-top: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         
-        /* ===== EXCITING CTA SECTION ===== */
+        /* ===== CTA SECTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
             color: #FFFFFF;
             padding: 100px 0;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '🎉🚀⚡💎🏆✨';
-            position: absolute;
-            top: 20%;
-            left: 0;
-            right: 0;
-            font-size: 2rem;
-            opacity: 0.1;
-            animation: float 4s ease-in-out infinite;
         }
         
         .cta-section h2 {
             color: #FFFFFF;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.3);
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 2rem;
-        }
-        
-        .cta-section p {
-            font-size: 1.4rem;
-            margin-bottom: 3rem;
-            color: #FFFFFF;
-            font-weight: 600;
+            animation: bounce 2s ease-in-out infinite;
         }
         
         .offer-box {
             background: rgba(255, 255, 255, 0.95);
             color: #2D3748;
             padding: 3rem;
-            border-radius: 40px;
+            border-radius: 30px;
             margin: 3rem auto;
-            max-width: 600px;
-            border: 6px solid #FFFFFF;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            animation: pulse 3s ease-in-out infinite;
+            max-width: 500px;
         }
         
         .price {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
+            color: #1ABC9C;
             margin-bottom: 1rem;
-            color: #FF6B6B;
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
         }
         
-        .price-note {
-            font-size: 1.2rem;
-            color: #4A5568;
-            margin-bottom: 2rem;
-        }
-        
-        .bonus-list {
-            text-align: left;
-            margin: 2rem 0;
-        }
-        
-        .bonus-list li {
-            padding: 0.5rem 0;
-            font-weight: 600;
-            color: #2D3748;
-        }
-        
-        .bonus-list li:before {
-            content: '🎁 ';
-            margin-right: 0.5rem;
-        }
-        
-        /* ===== PLAYFUL FAQ ===== */
+        /* ===== FAQ ===== */
         .faq {
-            background: #FFFFFF;
+            background: #F8F9FA;
             padding: 100px 0;
         }
         
         .faq-list {
-            max-width: 900px;
+            max-width: 800px;
             margin: 4rem auto 0;
         }
         
         .faq-item {
-            background: linear-gradient(135deg, #96CEB4 0%, #FFECD2 100%);
-            margin-bottom: 2rem;
-            border-radius: 25px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: #FFFFFF;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            border: 3px solid #1ABC9C;
             overflow: hidden;
-            border: 4px solid #FFFFFF;
-            transition: all 0.3s ease;
-        }
-        
-        .faq-item:hover {
-            transform: translateX(10px);
         }
         
         .faq-question {
@@ -771,48 +551,32 @@
             border: none;
             width: 100%;
             text-align: left;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #2D3748;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-question:hover {
-            background: rgba(255,255,255,0.3);
         }
         
         .faq-answer {
             padding: 0 2rem 2rem;
             color: #4A5568;
-            font-weight: 600;
         }
         
-        .faq-icon {
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        /* ===== ADORABLE FOOTER ===== */
+        /* ===== FOOTER ===== */
         footer {
-            background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
+            background: #2D3748;
             color: #FFFFFF;
-            padding: 80px 0 40px;
-            position: relative;
+            padding: 60px 0 30px;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .footer-section h3 {
-            color: #4ECDC4;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
+            color: #1ABC9C;
+            margin-bottom: 1rem;
         }
         
         .footer-section ul {
@@ -820,55 +584,50 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
         }
         
         .footer-section ul li a {
             color: #FFFFFF;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 600;
+            transition: color 0.3s ease;
         }
         
         .footer-section ul li a:hover {
-            color: #4ECDC4;
-            transform: translateX(10px);
+            color: #1ABC9C;
         }
         
         .social-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
         
         .social-links a {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            width: 45px;
+            height: 45px;
+            background: #1ABC9C;
             color: #FFFFFF;
             text-align: center;
-            line-height: 50px;
+            line-height: 45px;
             border-radius: 50%;
             text-decoration: none;
-            font-size: 1.2rem;
             transition: all 0.3s ease;
-            border: 3px solid #FFFFFF;
         }
         
         .social-links a:hover {
-            transform: translateY(-5px) rotate(10deg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+            background: #16A085;
         }
         
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 2px dashed #4A5568;
+            border-top: 1px solid #4A5568;
             color: #A0AEC0;
         }
         
-        /* ===== RESPONSIVE DESIGN ===== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -879,11 +638,11 @@
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .hero {
@@ -896,3 +655,163 @@
             }
             
             .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">🤖 IHateManualJob</a>
+                <ul class="nav-menu">
+                    <li><a href="#home">🏠 Home</a></li>
+                    <li><a href="#course">📚 Course</a></li>
+                    <li><a href="#testimonials">💬 Testimonials</a></li>
+                    <li><a href="#faq">❓ FAQ</a></li>
+                </ul>
+                <a href="#course" class="btn">🚀 เริ่มเรียนฟรี</a>
+                <button class="mobile-menu">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="hero-emojis">😤💻🤖✨</div>
+        <div class="hero-emojis-right">🚀⚡💪🎯</div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>หยุดทำงาน Manual 😤<br>เริ่ม <span style="color: #FFE66D;">Automation</span> กันเถอะ! 🚀</h1>
+                <div class="hero-subtitle">
+                    <p>เบื่อทำงานซ้ำๆ ทุกวันแล้วใช่ไหม? 😩 เสียเวลา 3-5 ชั่วโมงต่อวัน กับงานที่คอมพิวเตอร์ทำแทนได้!</p>
+                    <p><strong>🎯 เรียนรู้ Automation ใน 30 วัน และกลับคืนเวลาให้กับสิ่งที่สำคัญกว่า</strong></p>
+                </div>
+                <div class="hero-cta">
+                    <a href="#course" class="btn btn-large">🎉 เริ่มเรียนทันที</a>
+                    <a href="#solution" class="btn btn-secondary btn-large">🔍 ดูรายละเอียด</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM SECTION ===== -->
+    <section class="problem section-padding" id="problem">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-emoji">🤔</div>
+                <h2>คุณเจอปัญหาเหล่านี้ไหม?</h2>
+                <p>ปัญหาที่คนทำงาน Manual เจอทุกวัน และส่งผลกระทบต่อชีวิต 😓</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <div class="problem-emoji">⏰</div>
+                    <h3>เสียเวลาเยอะมาก!</h3>
+                    <p>ใช้เวลา 3-5 ชั่วโมงต่อวัน ทำงานซ้ำๆ ที่คอมพิวเตอร์สามารถทำแทนได้ใน 5 นาที 😱</p>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-emoji">😩</div>
+                    <h3>เบื่อและ Burnout</h3>
+                    <p>ทำงานเดิมๆ ทุกวัน ไม่มี Creativity ไม่เรียนรู้อะไรใหม่ รู้สึกติดอยู่ในจุดเดิม 😔</p>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-emoji">⚠️</div>
+                    <h3>ผิดพลาดบ่อย</h3>
+                    <p>ทำงานซ้ำๆ จนเบื่อ ทำให้เกิดข้อผิดพลาด Human Error ที่หลีกเลี่ยงได้ 😰</p>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-emoji">📊</div>
+                    <h3>ไม่มีเวลาพัฒนาตัวเอง</h3>
+                    <p>เวลาส่วนใหญ่ไปกับงานประจำ ไม่มีเวลาเรียนรู้ skill ใหม่ หรือทำในสิ่งที่สำคัญกว่า 😞</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOLUTION SECTION ===== -->
+    <section class="solution section-padding" id="solution">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-emoji">💡</div>
+                <h2>Automation คือคำตอบ! 🎯</h2>
+                <p>เปลี่ยนจาก Manual Worker เป็น Automation Expert ✨</p>
+            </div>
+            
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h3>🤖 คอร์ส "Automation: Kill The Manual Job"</h3>
+                    <p>เรียนรู้การสร้าง Automation System ที่จะช่วยให้คุณทำงานได้เร็วขึ้น มีความแม่นยำมากขึ้น และมีเวลาให้กับสิ่งที่สำคัญกว่า!</p>
+                    
+                    <ul class="solution-features">
+                        <li>เรียนรู้ Python สำหรับ Automation จากพื้นฐาน</li>
+                        <li>สร้าง Bot ทำงานแทนในงาน Excel, Email, Web</li>
+                        <li>Automate การวิเคราะห์ข้อมูลและสร้างรายงาน</li>
+                        <li>เชื่อมต่อ API และทำงานกับ Database</li>
+                        <li>สร้าง Workflow อัตโนมัติสำหรับงานประจำ</li>
+                        <li>เรียนออนไลน์ได้ทุกที่ทุกเวลา พร้อม Support 24/7</li>
+                    </ul>
+                    
+                    <a href="#course" class="btn btn-large">📚 ดูรายละเอียดคอร์ส</a>
+                </div>
+                
+                <div class="solution-image">
+                    <img src="https://via.placeholder.com/500x400/1ABC9C/FFFFFF?text=🤖+Automation+Course" alt="Automation Course">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== COURSE SECTION ===== -->
+    <section class="course section-padding" id="course">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-emoji">📚</div>
+                <h2>เนื้อหาในคอร์ส</h2>
+                <p>เรียนรู้ Step by Step จากผู้เชี่ยวชาญ Automation มากกว่า 10 ปี 👨‍💻</p>
+            </div>
+            
+            <div class="course-modules">
+                <div class="module">
+                    <div class="module-number">1</div>
+                    <h3>🐍 Python Foundation</h3>
+                    <p>เรียนรู้ Python พื้นฐานสำหรับ Automation เริ่มต้นจากศูน์ พร้อมแนวทางการคิดแบบ Programmer</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">2</div>
+                    <h3>📊 Excel & File Automation</h3>
+                    <p>สร้าง Bot จัดการไฟล์ Excel, CSV, PDF อัตโนมัติ อ่าน/เขียนข้อมูล และสร้างรายงาน</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">3</div>
+                    <h3>🌐 Web Automation & Scraping</h3>
+                    <p>ทำงานกับเว็บไซต์อัตโนมัติ เก็บข้อมูล กรอกฟอร์ม และทำงานซ้ำๆ บนเว็บ</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">4</div>
+                    <h3>📧 Email & Communication</h3>
+                    <p>สร้างระบบส่ง Email อัตโนมัติ จัดการข้อความ และสร้าง Notification System</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">5</div>
+                    <h3>🔗 Database & API</h3>
+                    <p>เชื่อมต่อ Database, ทำงานกับ API, และสร้างระบบข้อมูลแบบครบวงจร</p>
+                </div>
+                
+                <div class="module">
+                    <div class="module-number">6</div>
+                    <h
