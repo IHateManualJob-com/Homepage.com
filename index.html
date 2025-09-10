@@ -44,6 +44,11 @@
             100% { transform: scale(1); }
         }
         
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
         /* ===== UTILITY CLASSES ===== */
         .container {
             max-width: 1200px;
@@ -101,8 +106,25 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             border: none;
+            cursor: pointer;
             box-shadow: 0 8px 25px rgba(26, 188, 156, 0.3);
-            animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
@@ -138,6 +160,7 @@
             z-index: 1000;
             padding: 1rem 0;
             border-bottom: 3px solid #1ABC9C;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
         }
         
         nav {
@@ -156,7 +179,7 @@
         
         .logo:hover {
             transform: scale(1.1);
-            animation: wiggle 1s ease-in-out;
+            animation: wiggle 0.5s ease-in-out;
         }
         
         .nav-menu {
@@ -199,13 +222,23 @@
             overflow: hidden;
         }
         
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+        }
+        
         .hero-emojis {
             position: absolute;
             top: 20%;
             left: 10%;
             font-size: 3rem;
             opacity: 0.2;
-            animation: wiggle 3s ease-in-out infinite;
+            animation: float 4s ease-in-out infinite;
         }
         
         .hero-emojis-right {
@@ -214,7 +247,7 @@
             right: 10%;
             font-size: 3rem;
             opacity: 0.2;
-            animation: wiggle 3s ease-in-out infinite reverse;
+            animation: float 4s ease-in-out infinite reverse;
         }
         
         .hero-content {
@@ -227,8 +260,8 @@
         .hero h1 {
             color: #FFFFFF;
             margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: bounce 2s ease-in-out infinite;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: bounce 3s ease-in-out infinite;
         }
         
         .hero-subtitle {
@@ -238,6 +271,7 @@
             padding: 25px;
             border-radius: 25px;
             border: 2px dashed rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
         }
         
         .hero-cta {
@@ -245,11 +279,12 @@
             gap: 2rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         /* ===== PROBLEM SECTION ===== */
         .problem {
-            background: #F8F9FA;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 100px 0;
         }
         
@@ -274,6 +309,19 @@
             text-align: center;
             border: 3px solid #1ABC9C;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(26,188,156,0.05) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
         }
         
         .problem-item:hover {
@@ -285,6 +333,11 @@
             font-size: 3rem;
             margin-bottom: 1.5rem;
             animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .problem-item h3 {
+            color: #2D3748;
+            margin-bottom: 1rem;
         }
         
         /* ===== SOLUTION SECTION ===== */
@@ -302,7 +355,7 @@
         }
         
         .solution-text {
-            background: #F8F9FA;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 3rem;
             border-radius: 25px;
             border: 3px solid #1ABC9C;
@@ -317,7 +370,8 @@
             padding: 0.8rem 0;
             font-weight: 600;
             position: relative;
-            padding-left: 2rem;
+            padding-left: 2.5rem;
+            border-bottom: 1px dashed rgba(26,188,156,0.3);
         }
         
         .solution-features li:before {
@@ -325,6 +379,11 @@
             position: absolute;
             left: 0;
             font-size: 1.2rem;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+        
+        .solution-image {
+            text-align: center;
         }
         
         .solution-image img {
@@ -332,11 +391,16 @@
             border-radius: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border: 4px solid #1ABC9C;
+            transition: all 0.3s ease;
+        }
+        
+        .solution-image img:hover {
+            transform: rotate(-2deg) scale(1.02);
         }
         
         /* ===== COURSE SECTION ===== */
         .course {
-            background: #F8F9FA;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 100px 0;
         }
         
@@ -355,15 +419,16 @@
             transition: all 0.3s ease;
             text-align: center;
             border: 3px solid #1ABC9C;
+            position: relative;
         }
         
         .module:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) rotate(-1deg);
             box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .module-number {
-            background: #1ABC9C;
+            background: linear-gradient(45deg, #1ABC9C, #16A085);
             color: #FFFFFF;
             width: 60px;
             height: 60px;
@@ -374,17 +439,25 @@
             font-weight: 900;
             font-size: 1.5rem;
             margin: 0 auto 2rem;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .module h3 {
+            color: #2D3748;
+            margin-bottom: 1rem;
         }
         
         .course-info {
             background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
             color: #FFFFFF;
-            padding: 4rem;
+            padding: 4rem 3rem;
             border-radius: 30px;
             text-align: center;
             margin-top: 4rem;
             position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
         }
         
         .course-info::before {
@@ -399,6 +472,13 @@
             border-radius: 20px;
         }
         
+        .course-info h3 {
+            color: #FFFFFF;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
         .course-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -408,9 +488,10 @@
         
         .stat {
             background: rgba(255,255,255,0.1);
-            padding: 2rem;
+            padding: 2rem 1rem;
             border-radius: 20px;
             text-align: center;
+            border: 2px dashed rgba(255,255,255,0.3);
         }
         
         .stat-number {
@@ -418,6 +499,7 @@
             font-weight: 900;
             color: #FFE66D;
             display: block;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: pulse 2s ease-in-out infinite;
         }
         
@@ -427,6 +509,7 @@
             letter-spacing: 1px;
             font-weight: 600;
             margin-top: 0.5rem;
+            color: #FFFFFF;
         }
         
         /* ===== TESTIMONIALS ===== */
@@ -443,17 +526,18 @@
         }
         
         .testimonial {
-            background: #F8F9FA;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 3rem;
             border-radius: 25px;
             border: 3px solid #1ABC9C;
             position: relative;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-8px) rotate(1deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .testimonial::before {
@@ -462,12 +546,14 @@
             position: absolute;
             top: -15px;
             left: 25px;
+            animation: bounce 3s ease-in-out infinite;
         }
         
         .testimonial-content {
             margin: 2rem 0;
             font-style: italic;
             font-weight: 600;
+            color: #2D3748;
         }
         
         .testimonial-author {
@@ -481,16 +567,31 @@
             height: 60px;
             border-radius: 50%;
             border: 3px solid #1ABC9C;
+            background: #1ABC9C;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
         
         .author-info h4 {
             font-weight: 700;
             color: #1ABC9C;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: #4A5568;
+            margin: 0;
         }
         
         .rating {
             margin-top: 1rem;
             font-size: 1.3rem;
+            color: #FFD700;
         }
         
         /* ===== CTA SECTION ===== */
@@ -499,13 +600,34 @@
             color: #FFFFFF;
             padding: 100px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '🎉🚀⚡💎🏆✨';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            font-size: 2rem;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
         }
         
         .cta-section h2 {
             color: #FFFFFF;
             font-size: 3rem;
             margin-bottom: 2rem;
-            animation: bounce 2s ease-in-out infinite;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: bounce 3s ease-in-out infinite;
+        }
+        
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: #FFFFFF;
+            font-weight: 600;
         }
         
         .offer-box {
@@ -515,6 +637,9 @@
             border-radius: 30px;
             margin: 3rem auto;
             max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border: 4px solid #FFFFFF;
+            animation: pulse 4s ease-in-out infinite;
         }
         
         .price {
@@ -522,11 +647,18 @@
             font-weight: 900;
             color: #1ABC9C;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .price-note {
+            font-size: 1.1rem;
+            color: #4A5568;
+            margin-bottom: 2rem;
         }
         
         /* ===== FAQ ===== */
         .faq {
-            background: #F8F9FA;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 100px 0;
         }
         
@@ -541,6 +673,13 @@
             border-radius: 20px;
             border: 3px solid #1ABC9C;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         
         .faq-question {
@@ -553,16 +692,30 @@
             text-align: left;
             font-size: 1.1rem;
             color: #2D3748;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: rgba(26,188,156,0.1);
         }
         
         .faq-answer {
             padding: 0 2rem 2rem;
             color: #4A5568;
+            font-weight: 500;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #1ABC9C;
+            transition: transform 0.3s ease;
         }
         
         /* ===== FOOTER ===== */
         footer {
-            background: #2D3748;
+            background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
             color: #FFFFFF;
             padding: 60px 0 30px;
         }
@@ -577,6 +730,7 @@
         .footer-section h3 {
             color: #1ABC9C;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
         
         .footer-section ul {
@@ -584,17 +738,19 @@
         }
         
         .footer-section ul li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
         
         .footer-section ul li a {
             color: #FFFFFF;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .footer-section ul li a:hover {
             color: #1ABC9C;
+            transform: translateX(5px);
         }
         
         .social-links {
@@ -606,18 +762,20 @@
         .social-links a {
             width: 45px;
             height: 45px;
-            background: #1ABC9C;
+            background: linear-gradient(45deg, #1ABC9C, #16A085);
             color: #FFFFFF;
             text-align: center;
             line-height: 45px;
             border-radius: 50%;
             text-decoration: none;
+            font-weight: bold;
             transition: all 0.3s ease;
+            border: 2px solid #FFFFFF;
         }
         
         .social-links a:hover {
-            transform: translateY(-3px);
-            background: #16A085;
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
         
         .footer-bottom {
@@ -662,6 +820,31 @@
             .section-padding {
                 padding: 60px 0;
             }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-emojis,
+            .hero-emojis-right {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .btn-large {
+                padding: 18px 36px;
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -674,7 +857,7 @@
                 <ul class="nav-menu">
                     <li><a href="#home">🏠 Home</a></li>
                     <li><a href="#course">📚 Course</a></li>
-                    <li><a href="#testimonials">💬 Testimonials</a></li>
+                    <li><a href="#testimonials">💬 Reviews</a></li>
                     <li><a href="#faq">❓ FAQ</a></li>
                 </ul>
                 <a href="#course" class="btn">🚀 เริ่มเรียนฟรี</a>
@@ -691,7 +874,8 @@
             <div class="hero-content">
                 <h1>หยุดทำงาน Manual 😤<br>เริ่ม <span style="color: #FFE66D;">Automation</span> กันเถอะ! 🚀</h1>
                 <div class="hero-subtitle">
-                    <p>เบื่อทำงานซ้ำๆ ทุกวันแล้วใช่ไหม? 😩 เสียเวลา 3-5 ชั่วโมงต่อวัน กับงานที่คอมพิวเตอร์ทำแทนได้!</p>
+                    <p><strong>เบื่อทำงานซ้ำๆ ทุกวันแล้วใช่ไหม? 😩</strong></p>
+                    <p>เสียเวลา 3-5 ชั่วโมงต่อวัน กับงานที่คอมพิวเตอร์ทำแทนได้ใน 5 นาที!</p>
                     <p><strong>🎯 เรียนรู้ Automation ใน 30 วัน และกลับคืนเวลาให้กับสิ่งที่สำคัญกว่า</strong></p>
                 </div>
                 <div class="hero-cta">
@@ -708,110 +892,4 @@
             <div class="text-center">
                 <div class="section-emoji">🤔</div>
                 <h2>คุณเจอปัญหาเหล่านี้ไหม?</h2>
-                <p>ปัญหาที่คนทำงาน Manual เจอทุกวัน และส่งผลกระทบต่อชีวิต 😓</p>
-            </div>
-            
-            <div class="problem-grid">
-                <div class="problem-item">
-                    <div class="problem-emoji">⏰</div>
-                    <h3>เสียเวลาเยอะมาก!</h3>
-                    <p>ใช้เวลา 3-5 ชั่วโมงต่อวัน ทำงานซ้ำๆ ที่คอมพิวเตอร์สามารถทำแทนได้ใน 5 นาที 😱</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-emoji">😩</div>
-                    <h3>เบื่อและ Burnout</h3>
-                    <p>ทำงานเดิมๆ ทุกวัน ไม่มี Creativity ไม่เรียนรู้อะไรใหม่ รู้สึกติดอยู่ในจุดเดิม 😔</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-emoji">⚠️</div>
-                    <h3>ผิดพลาดบ่อย</h3>
-                    <p>ทำงานซ้ำๆ จนเบื่อ ทำให้เกิดข้อผิดพลาด Human Error ที่หลีกเลี่ยงได้ 😰</p>
-                </div>
-                
-                <div class="problem-item">
-                    <div class="problem-emoji">📊</div>
-                    <h3>ไม่มีเวลาพัฒนาตัวเอง</h3>
-                    <p>เวลาส่วนใหญ่ไปกับงานประจำ ไม่มีเวลาเรียนรู้ skill ใหม่ หรือทำในสิ่งที่สำคัญกว่า 😞</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SOLUTION SECTION ===== -->
-    <section class="solution section-padding" id="solution">
-        <div class="container">
-            <div class="text-center">
-                <div class="section-emoji">💡</div>
-                <h2>Automation คือคำตอบ! 🎯</h2>
-                <p>เปลี่ยนจาก Manual Worker เป็น Automation Expert ✨</p>
-            </div>
-            
-            <div class="solution-content">
-                <div class="solution-text">
-                    <h3>🤖 คอร์ส "Automation: Kill The Manual Job"</h3>
-                    <p>เรียนรู้การสร้าง Automation System ที่จะช่วยให้คุณทำงานได้เร็วขึ้น มีความแม่นยำมากขึ้น และมีเวลาให้กับสิ่งที่สำคัญกว่า!</p>
-                    
-                    <ul class="solution-features">
-                        <li>เรียนรู้ Python สำหรับ Automation จากพื้นฐาน</li>
-                        <li>สร้าง Bot ทำงานแทนในงาน Excel, Email, Web</li>
-                        <li>Automate การวิเคราะห์ข้อมูลและสร้างรายงาน</li>
-                        <li>เชื่อมต่อ API และทำงานกับ Database</li>
-                        <li>สร้าง Workflow อัตโนมัติสำหรับงานประจำ</li>
-                        <li>เรียนออนไลน์ได้ทุกที่ทุกเวลา พร้อม Support 24/7</li>
-                    </ul>
-                    
-                    <a href="#course" class="btn btn-large">📚 ดูรายละเอียดคอร์ส</a>
-                </div>
-                
-                <div class="solution-image">
-                    <img src="https://via.placeholder.com/500x400/1ABC9C/FFFFFF?text=🤖+Automation+Course" alt="Automation Course">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== COURSE SECTION ===== -->
-    <section class="course section-padding" id="course">
-        <div class="container">
-            <div class="text-center">
-                <div class="section-emoji">📚</div>
-                <h2>เนื้อหาในคอร์ส</h2>
-                <p>เรียนรู้ Step by Step จากผู้เชี่ยวชาญ Automation มากกว่า 10 ปี 👨‍💻</p>
-            </div>
-            
-            <div class="course-modules">
-                <div class="module">
-                    <div class="module-number">1</div>
-                    <h3>🐍 Python Foundation</h3>
-                    <p>เรียนรู้ Python พื้นฐานสำหรับ Automation เริ่มต้นจากศูน์ พร้อมแนวทางการคิดแบบ Programmer</p>
-                </div>
-                
-                <div class="module">
-                    <div class="module-number">2</div>
-                    <h3>📊 Excel & File Automation</h3>
-                    <p>สร้าง Bot จัดการไฟล์ Excel, CSV, PDF อัตโนมัติ อ่าน/เขียนข้อมูล และสร้างรายงาน</p>
-                </div>
-                
-                <div class="module">
-                    <div class="module-number">3</div>
-                    <h3>🌐 Web Automation & Scraping</h3>
-                    <p>ทำงานกับเว็บไซต์อัตโนมัติ เก็บข้อมูล กรอกฟอร์ม และทำงานซ้ำๆ บนเว็บ</p>
-                </div>
-                
-                <div class="module">
-                    <div class="module-number">4</div>
-                    <h3>📧 Email & Communication</h3>
-                    <p>สร้างระบบส่ง Email อัตโนมัติ จัดการข้อความ และสร้าง Notification System</p>
-                </div>
-                
-                <div class="module">
-                    <div class="module-number">5</div>
-                    <h3>🔗 Database & API</h3>
-                    <p>เชื่อมต่อ Database, ทำงานกับ API, และสร้างระบบข้อมูลแบบครบวงจร</p>
-                </div>
-                
-                <div class="module">
-                    <div class="module-number">6</div>
-                    <h
+                <p>ปัญหาที่คนทำงาน Manual เจอทุกวัน และส่งผลก
